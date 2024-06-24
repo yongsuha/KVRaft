@@ -1,0 +1,2 @@
+/root/KVRaft/KVRaft/build/CMakeFiles/edit_cache.dir
+/root/KVRaft/KVRaft/build/CMakeFiles/rebuild_cache.dir
