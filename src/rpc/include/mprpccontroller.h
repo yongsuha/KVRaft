@@ -10,6 +10,11 @@ public:
     bool Failed() const;
     std::string ErrorText() const;
     void SetFailed(const std::string& reason);
+
+    // 目前未实现具体的功能
+  void StartCancel();
+  bool IsCanceled() const;
+  void NotifyOnCancel(google::protobuf::Closure* callback);
 private:
     bool _failed; // RPC 方法执行过程中的状态
     std::string _errText; // RPC 方法执行过程中的错误信息
