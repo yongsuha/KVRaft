@@ -15,12 +15,12 @@ message LogEntry
 // 由 leader 复制日志条目的包, 也可以是心跳包
 message AppendEntriesArgs
 {
-    int32 Term = 1;
-    int32 LeaderId = 2;
-    int32 PrevLogIndex = 3;
-    int32 PrevLogTerm = 4;
-    repeated LogEntry Entries = 5;
-    int32 LeaderCommit = 6;
+    int32 Term = 1; // leader 任期号
+    int32 LeaderId = 2; // leader ID 为了其他节点能重定向写操作到 leader
+    int32 PrevLogIndex = 3; // leader 最新日志前一个日志位置的索引值
+    int32 PrevLogTerm = 4; // leader 最新日志前一个日志的任期号
+    repeated LogEntry Entries = 5; // 需要追加到 follower 上的日志条目, 可能是多个
+    int32 LeaderCommit = 6; // leader 服务器的 commitindex
 }
 
 message AppendEntriesReply
