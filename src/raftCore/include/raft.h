@@ -57,7 +57,7 @@ public:
     int getLastLogIndex();
     int getLastLogTerm();
     void getLastLogIndexAndTerm(int* lastLogIndex, int* lastLogTerm);
-    int getLastTermFromLogIndex(int logIndex);
+    int getLogTermFromLogIndex(int logIndex);
     int GetRaftStateSize();
     int getSliceIndexFromLogIndex(int logIndex);
     bool sendRequestVote(int server, std::shared_ptr<raftRpcProtoc::RequestVoteArgs> args,
